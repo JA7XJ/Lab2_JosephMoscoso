@@ -53,10 +53,15 @@ static ArrayList<Alumno> a=new ArrayList();
                             }
                             break;
                         case 2:
-                            revisar();
-                            
+                            revisar();                        
                             break;
                         case 3:
+                            System.out.println("Notas totales de los estudiantes: ");
+                            System.out.println("----------------------------------------------");
+                            for (int i = 0; i < a.size(); i++) {
+                                System.out.println("Nombre: "+a.get(i).getName());
+                                System.out.println("Nombre: "+a.get(i).getNota());
+                            }
                             break;
                         default:
                             System.out.println("No existe opcion");
@@ -77,6 +82,25 @@ static ArrayList<Alumno> a=new ArrayList();
         }
     }
     public static void revisar(){
+        char resp='s';
+        for (int i = 0; i < e.size(); i++) {
+            System.out.println(i+")Examen de "+e.get(i).getClase());
+            System.out.print("¿Desea revisar este examen?[S/N]: ");
+            resp=sc.next().charAt(0);
+            if (resp=='s'||resp=='S') {
+                for (int j = 0; j < a.size(); j++) {
+                    System.out.println("Alumno: "+a.get(i).getName());
+                    for (int k = 0; k < e.get(i).getPreguntas().size(); k++) {
+                        System.out.println(e.get(i).getPreguntas());
+                        System.out.println(e.get(i).getRespuesta());
+                    }
+                    System.out.print("¿Que calificación desea dar?: ");
+                    int n=sc.nextInt();
+                    a.get(i).setNota(n);
+                }
+            }
+        }
+      
         
     }
     public static void login(){

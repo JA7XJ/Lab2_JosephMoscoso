@@ -27,5 +27,10 @@ public class Examenes {
     public void setPreguntas(ArrayList preguntas) {
         this.preguntas = preguntas;
     }
-    
+    public ArrayList getRespuesta(){
+        return respuesta;
+    }
+    public void setRespuesta(ArrayList respuesta){
+        this.respuesta=respuesta;
+    }
 }
