@@ -3,7 +3,7 @@ import java.util.*;
 public class Alumno {
     private String name;
     private String account;
-    private String edad;
+    private int edad;
     private String Ciudad;
     private String Nacion;
     private String Id;
@@ -11,7 +11,7 @@ public class Alumno {
     private String password;
     private int nota;
 
-    public Alumno(String name, String account, String edad, String Ciudad, String Nacion, String Id, String User, String password, int nota) {
+    public Alumno(String name, String account, int edad, String Ciudad, String Nacion, String Id, String User, String password, int nota) {
         this.name = name;
         this.account = account;
         this.edad = edad;
@@ -39,11 +39,11 @@ public class Alumno {
         this.account = account;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
