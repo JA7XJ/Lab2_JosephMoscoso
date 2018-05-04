@@ -25,19 +25,24 @@ static Scanner sc=new Scanner(System.in);
                     System.out.println("----------------------------------------------");
                     switch (op2) {
                         case 1:
-                            System.out.print("Ingrese el nombre de la clase por favor: ");
-                            String clase=sc.next();
-                            System.out.print("Cuantas preguntas desea crear: ");
-                            int l=sc.nextInt();
-                            ArrayList preguntas=new ArrayList();
-                            ArrayList respuestas=new ArrayList();
-                            for (int i = 0; i < l; i++) {
-                                System.out.print("Ingrese pregunta: ");
-                                String p=sc.nextLine();
-                                preguntas.add(p);
-                                /*System.out.print("Ingrese respuestas: ");
-                                String re=sc.nextLine();
-                                respuestas.add(re);*/
+                            char r2='s';
+                            while (r2=='s'||r2=='S') {
+                                System.out.print("Ingrese el nombre de la clase por favor: ");
+                                String clase=sc.next();
+                                System.out.print("Cuantas preguntas desea crear: ");
+                                int l=sc.nextInt();
+                                ArrayList preguntas=new ArrayList();
+                                ArrayList<Examenes> e=new ArrayList();
+                                //ArrayList respuestas=new ArrayList();
+                                for (int i = 0; i < l; i++) {
+                                    System.out.print("Ingrese pregunta: ");
+                                    String p=sc.nextLine();
+                                    preguntas.add(p);
+                                    /*System.out.print("Ingrese respuestas: ");
+                                    String re=sc.nextLine();
+                                    respuestas.add(re);*/
+                                }
+                                e.add(new Examenes(clase, preguntas));
                             }
                             
                             break;
@@ -56,6 +61,9 @@ static Scanner sc=new Scanner(System.in);
                 default:
                     System.out.println("No existe");
             }
+            System.out.println("----------------------------------------------");
+            System.out.print("¿Desea volver?[S/N]: ");
+            r=sc.next().charAt(0);
         }
     }
     
