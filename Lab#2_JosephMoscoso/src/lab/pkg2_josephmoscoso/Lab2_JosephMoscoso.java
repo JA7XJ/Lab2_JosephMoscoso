@@ -2,6 +2,9 @@ package lab.pkg2_josephmoscoso;
 import java.util.*;
 public class Lab2_JosephMoscoso {
 static Scanner sc=new Scanner(System.in);
+static ArrayList preguntas=new ArrayList();
+static ArrayList<Examenes> e=new ArrayList();
+static ArrayList<Alumno> a=new ArrayList();
     public static void main(String[] args) {
         char r='s';
         while (r=='s'||r=='S') {
@@ -31,8 +34,8 @@ static Scanner sc=new Scanner(System.in);
                                 String clase=sc.next();
                                 System.out.print("Cuantas preguntas desea crear: ");
                                 int l=sc.nextInt();
-                                ArrayList preguntas=new ArrayList();
-                                ArrayList<Examenes> e=new ArrayList();
+                                /*ArrayList preguntas=new ArrayList();
+                                ArrayList<Examenes> e=new ArrayList();*/
                                 //ArrayList respuestas=new ArrayList();
                                 for (int i = 0; i < l; i++) {
                                     System.out.print("Ingrese pregunta: ");
@@ -43,11 +46,12 @@ static Scanner sc=new Scanner(System.in);
                                     respuestas.add(re);*/
                                 }
                                 e.add(new Examenes(clase, preguntas));
+                                System.out.println("----------------------------------------------");
+                                System.out.print("¿Desea crear otro examen?[S/N]: ");
+                                r2=sc.next().charAt(0);
                             }
-                            
                             break;
                         case 2:
-                            cuenta();
                             break;
                         case 3:
                             break;
@@ -56,8 +60,10 @@ static Scanner sc=new Scanner(System.in);
                     }
                     break;
                 case 2:
+                    cuenta();
                     break;
                 case 3:
+                    login();
                     break;
                 default:
                     System.out.println("No existe");
@@ -67,13 +73,20 @@ static Scanner sc=new Scanner(System.in);
             r=sc.next().charAt(0);
         }
     }
+    public static void login(){
+        System.out.print("Bienvenido, por favor ingrese un username: ");
+        String user=sc.next();
+        System.out.print("Ingrese password: ");
+        String pass=sc.next();
+        
+    }
     public static void cuenta(){
         char r3='s';
-        ArrayList<Alumno> a=new ArrayList();
+        //ArrayList<Alumno> a=new ArrayList();
         while (r3=='s'||r3=='S') {
             System.out.print("Buen dia, por favor ingrese el nombre: ");
             String name=sc.nextLine();
-            //name=sc.nextLine();
+            name=sc.nextLine();
             System.out.print("Escriba numero de cuenta: ");
             String account=sc.next();
             //account=sc.next();
@@ -91,6 +104,7 @@ static Scanner sc=new Scanner(System.in);
             System.out.print("Ingrese password: ");
             String pass=sc.next();
             a.add(new Alumno(name, account, edad, city, nation, id, user, pass, 0));
+            System.out.println("----------------------------------------------");
             System.out.print("¿Desea ingresar otro alumno?[S/N]: ");
             r3=sc.next().charAt(0);
         }
