@@ -25,6 +25,20 @@ static Scanner sc=new Scanner(System.in);
                     System.out.println("----------------------------------------------");
                     switch (op2) {
                         case 1:
+                            System.out.print("Ingrese el nombre de la clase por favor: ");
+                            String clase=sc.next();
+                            System.out.print("Cuantas preguntas desea crear: ");
+                            int l=sc.nextInt();
+                            ArrayList preguntas=new ArrayList();
+                            ArrayList respuestas=new ArrayList();
+                            for (int i = 0; i < l; i++) {
+                                System.out.print("Ingrese pregunta: ");
+                                String p=sc.nextLine();
+                                preguntas.add(p);
+                                /*System.out.print("Ingrese respuestas: ");
+                                String re=sc.nextLine();
+                                respuestas.add(re);*/
+                            }
                             
                             break;
                         case 2:
