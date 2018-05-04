@@ -5,10 +5,11 @@ import java.util.ArrayList;
 public class Examenes {
     private String clase;
     private ArrayList preguntas;
-    
-    public Examenes(String clase, ArrayList preguntas){
+    private ArrayList respuesta;
+    public Examenes(String clase, ArrayList preguntas, ArrayList respuesta){
         this.clase=clase;
         this.preguntas=preguntas;
+        this.respuesta=respuesta;
     }
 
     public String getClase() {
