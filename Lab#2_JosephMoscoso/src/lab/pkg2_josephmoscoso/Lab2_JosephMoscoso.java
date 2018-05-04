@@ -33,7 +33,7 @@ static ArrayList<Alumno> a=new ArrayList();
                             while (r2=='s'||r2=='S') {
                                 System.out.print("Ingrese el nombre de la clase por favor: ");
                                 String clase=sc.next();
-                                System.out.print("Cuantas preguntas desea crear: ");
+                                System.out.print("Cuantas preguntas desea crear(ingrese entero, si ingresa dos seran 3 preguntas): ");
                                 int l=sc.nextInt();
                                 /*ArrayList preguntas=new ArrayList();
                                 ArrayList<Examenes> e=new ArrayList();*/
@@ -41,6 +41,7 @@ static ArrayList<Alumno> a=new ArrayList();
                                 for (int i = 0; i < l; i++) {
                                     System.out.print("Ingrese pregunta: ");
                                     String p=sc.nextLine();
+                                    p=sc.nextLine();
                                     preguntas.add(p);
                                     /*System.out.print("Ingrese respuestas: ");
                                     String re=sc.nextLine();
@@ -172,8 +173,16 @@ static ArrayList<Alumno> a=new ArrayList();
                     String user2=sc.next();
                     System.out.print("Ingrese password: ");
                     String pass2=sc.next();
-                    System.out.println("----------------------------------------------");
-                    a.add(new Alumno(name, account, edad, city, nation, id, user2, pass2, 0));
+                    a.get(pos).setName(name);
+                    a.get(pos).setAccount(account);
+                    a.get(pos).setEdad(edad);
+                    a.get(pos).setCiudad(city);
+                    a.get(pos).setNacion(nation);
+                    a.get(pos).setId(id);
+                    a.get(pos).setUser(user2);
+                    a.get(pos).setPassword(pass2);
+                    //System.out.println("----------------------------------------------");
+                    //a.add(new Alumno(name, account, edad, city, nation, id, user2, pass2, 0));
                     System.out.println("Los nuevos datos del estudiante son: ");
                     System.out.println("----------------------------------------------");
                     System.out.println("Nombre: "+a.get(pos).getName());
@@ -194,13 +203,14 @@ static ArrayList<Alumno> a=new ArrayList();
                         System.out.println(e.get(i).getPreguntas());
                         System.out.print("R//");
                         String resp=sc.nextLine();
+                        resp=sc.nextLine();
                         respuesta.add(resp);
                     }
                 }
                 System.out.println("----------------------------------------------");
                 System.out.println("Examenes terminados");
             }else{
-                System.out.println("Error, user o password mal ingresados");
+                System.out.println("Error, user o password mal ingresados o no existe");
             }
             System.out.println("----------------------------------------------");
             System.out.print("¿Desea volver ingresar?[S/N]: ");
