@@ -56,11 +56,28 @@ static ArrayList<Alumno> a=new ArrayList();
                             revisar();                        
                             break;
                         case 3:
-                            System.out.println("Notas totales de los estudiantes: ");
-                            System.out.println("----------------------------------------------");
-                            for (int i = 0; i < a.size(); i++) {
-                                System.out.println("Nombre: "+a.get(i).getName());
-                                System.out.println("Nombre: "+a.get(i).getNota());
+                            char resp='s', r4='s';
+                            while(r4=='s'||r4=='S'){
+                                System.out.println("Notas totales de los estudiantes: ");
+                                System.out.println("----------------------------------------------");
+                                for (int i = 0; i < a.size(); i++) {
+                                    System.out.println("Nombre: "+a.get(i).getName());
+                                    System.out.println("Nombre: "+a.get(i).getNota());
+                                }
+                                System.out.println("----------------------------------------------");
+                                System.out.print("¿Desea modificar alguna nota?[S/N]: ");
+                                resp=sc.next().charAt(0);
+                                System.out.println("----------------------------------------------");
+                                if (resp=='s'||resp=='S') {
+                                    System.out.print("Ingrese el número de estudiante: ");
+                                    int nn=sc.nextInt();
+                                    System.out.print("Que nota desea ponerle: ");
+                                    int nnn=sc.nextInt();
+                                    a.get(nn).setNota(nnn);
+                                }
+                                System.out.println("----------------------------------------------");
+                                System.out.print("¿Desea ver las notas de nuevo?[S/N]: ");
+                                r4=sc.next().charAt(0);
                             }
                             break;
                         default:
@@ -94,14 +111,13 @@ static ArrayList<Alumno> a=new ArrayList();
                         System.out.println(e.get(i).getPreguntas());
                         System.out.println(e.get(i).getRespuesta());
                     }
+                    System.out.println("----------------------------------------------");
                     System.out.print("¿Que calificación desea dar?: ");
                     int n=sc.nextInt();
                     a.get(i).setNota(n);
                 }
             }
         }
-      
-        
     }
     public static void login(){
         boolean log = false;
